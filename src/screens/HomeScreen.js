@@ -17,6 +17,8 @@ const HomeScreen = (props) => {
 					console.log('List Pressed');
 				}}>
 				<Text>Go To List Demo</Text>
+				<Text>Go To List Demo</Text>
+				<Text>Go To List Demo</Text>
 			</TouchableOpacity>
 		</View>
 	);
