@@ -1,25 +1,35 @@
 import React from 'react';
 import { Text, StyleSheet, View, Button, TouchableOpacity } from 'react-native';
 
-const HomeScreen = (props) => {
-	console.log(props);
+const HomeScreen = ({ navigation }) => {
+	// console.log(props.navigation);
 	return (
 		<View>
 			<Text style={styles.text}>This is the first React-native of Veilics</Text>
 			<Button
 				onPress={() => {
-					console.log('Button Pressed');
+					navigation.navigate('Components');
 				}}
 				title='Go To Components Demo'
 			/>
-			<TouchableOpacity
+			<Button
+				title='Go to List'
 				onPress={() => {
-					console.log('List Pressed');
-				}}>
-				<Text>Go To List Demo</Text>
-				<Text>Go To List Demo</Text>
-				<Text>Go To List Demo</Text>
-			</TouchableOpacity>
+					navigation.navigate('List');
+				}}
+			/>
+			<Button
+				title='Go to Image'
+				onPress={() => {
+					navigation.navigate('Image');
+				}}
+			/>
+			<Button
+				title='Go to Test'
+				onPress={() => {
+					navigation.navigate('Test');
+				}}
+			/>
 		</View>
 	);
 };
