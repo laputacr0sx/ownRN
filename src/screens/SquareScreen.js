@@ -2,38 +2,65 @@ import React, { useState } from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 import ColorCounter from '../components/ColorCounter';
 
+const COLOR_INCREMENT = 15;
+
 const SquareScreen = () => {
 	const [red, setRed] = useState(0);
 	const [green, setGreen] = useState(0);
 	const [blue, setBlue] = useState(0);
 
+	const setColor = (color, change) => {
+		switch (color) {
+			case 'red':
+				return red + change > 255 || red + change < 0
+					? null
+					: setRed(red + change);
+
+			case 'green':
+				return green + change > 255 || green + change < 0
+					? null
+					: setGreen(green + change);
+
+			case 'blue':
+				return blue + change > 255 || blue + change < 0
+					? null
+					: setBlue(blue + change);
+		}
+	};
+
 	return (
 		<View>
-			<Text style={[styles.text, { color: 'white' }]}>Change me</Text>
+			<Text
+				style={[
+					styles.title,
+					{ color: 'white', backgroundColor: `rgb(${red},${green},${blue})` },
+				]}>
+				Change me {`R${red}G${green}B${blue}`}
+			</Text>
 			<ColorCounter
 				onIncrease={() => {
-					setRed(red + 1);
+					setColor('red', COLOR_INCREMENT);
 				}}
 				onDecrease={() => {
-					setRed(red - 1);
+					setColor('red', -1 * COLOR_INCREMENT);
 				}}
 				color='Red'
 			/>
 			<ColorCounter
 				onIncrease={() => {
-					setGreen(green + 1);
+					setColor('green', COLOR_INCREMENT);
 				}}
 				onDecrease={() => {
-					setGreen(green - 1);
+					setColor('green', -1 * COLOR_INCREMENT);
 				}}
 				color='Green'
 			/>
 			<ColorCounter
 				onIncrease={() => {
-					setBlue(blue + 1);
+					setColor('blue', COLOR_INCREMENT);
 				}}
 				onDecrease={() => {
-					setBlue(blue - 1);
+					setColor('blue', -1 * COLOR_INCREMENT);
 				}}
 				color='Blue'
 			/>
@@ -42,12 +69,11 @@ const SquareScreen = () => {
 };
 
 const styles = StyleSheet.create({
-	text: {
+	title: {
 		fontSize: 48,
 		fontWeight: 'bold',
 		width: '100%',
 		textAlign: 'center',
-		backgroundColor: `rgb(${red},${green},${blue})`,
 	},
 });
 
