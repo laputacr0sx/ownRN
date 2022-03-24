@@ -17,8 +17,8 @@ const ListScreen = () => {
 	return (
 		<FlatList
 			showsVerticalScrollIndicator={false}
-			KeyExtractor={(friend) => friend.name}
 			data={friends}
+			KeyExtractor={(friend) => friend.name}
 			renderItem={({ item }) => {
 				return (
 					<Text style={styles.textStyle}>
