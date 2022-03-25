@@ -26,7 +26,6 @@ const HomeScreen = ({ navigation }) => {
 			/>
 			<Button
 				title='Go to Counter'
-				color='#f19400'
 				onPress={() => {
 					navigation.navigate('Counter');
 				}}
@@ -41,6 +40,12 @@ const HomeScreen = ({ navigation }) => {
 				title='Go to Adjustable Color'
 				onPress={() => {
 					navigation.navigate('AdjustableColor');
+				}}
+			/>
+			<Button
+				title='Go to Square Screen Old'
+				onPress={() => {
+					navigation.navigate('SquareOld');
 				}}
 			/>
 			<Button
