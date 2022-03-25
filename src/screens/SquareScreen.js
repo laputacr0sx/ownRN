@@ -6,7 +6,7 @@ const COLOR_INCREMENT = 15;
 
 const reducer = (state, action) => {
 	// state === {red:number, green:number, blue:number}
-	// action === {colorToChange: 'change_red'||'change_green'||'change_blue', payload: 15|| -15}
+	// action === {type: 'change_red'||'change_green'||'change_blue', payload: 15|| -15}
 
 	switch (action.type) {
 		case 'change_red':
@@ -31,8 +31,6 @@ const reducer = (state, action) => {
 const SquareScreen = () => {
 	const [state, dispatch] = useReducer(reducer, { red: 0, green: 0, blue: 0 });
 	const { red, green, blue } = state;
-
-	console.log(state);
 
 	return (
 		<View>
