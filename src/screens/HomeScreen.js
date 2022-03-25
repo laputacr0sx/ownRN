@@ -2,7 +2,6 @@ import React from 'react';
 import { Text, StyleSheet, View, Button } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
-	// console.log(props.navigation);
 	return (
 		<View>
 			<Text style={styles.text}>This is the first React-native of Veilics</Text>
