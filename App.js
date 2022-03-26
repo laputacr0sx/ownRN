@@ -12,6 +12,7 @@ import AdjustableColorScreen from './src/screens/AdjustableColorScreen';
 import SquareScreenOld from './src/screens/SquareScreenOld';
 import SquareScreen from './src/screens/SquareScreen';
 import TextScreen from './src/screens/TextScreen';
+import BoxScreen from './src/screens/BoxScreen';
 
 const navigator = createStackNavigator(
 	{
@@ -26,6 +27,7 @@ const navigator = createStackNavigator(
 		AdjustableColor: AdjustableColorScreen,
 		SquareOld: SquareScreenOld,
 		Square: SquareScreen,
+		Box: BoxScreen,
 		Text: TextScreen,
 	},
 	{
